@@ -16,7 +16,7 @@ serverTime = {
     }
 
 # // POST api/telemetri_gonder
-telemetriData = {
+telemetryData = {
     "takim_numarasi": 1,
     "IHA_enlem": 43.576546,
     "IHA_boylam": 22.385421,
@@ -41,7 +41,7 @@ telemetriData = {
 }
 
 # telemetryData response
-responseTelemetriData = {
+responseTelemetryData = {
     
         "sunucuSaati": {
                 "saat": 6,
