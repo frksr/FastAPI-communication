@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI, Body, HTTPException
 from pydantic import BaseModel
-from telemetryData import teamLogin, telemetriData, serverTime,trackingData ,kamikazeData ,qrData 
+from telemetryData import teamLogin, telemetryData, serverTime,trackingData ,kamikazeData ,qrData, responseTelemetryData
 
 
 app = FastAPI()
@@ -10,10 +10,10 @@ app = FastAPI()
 @app.get("/login")
 async def root(body: dict = Body(...)):
     if body["kadi"]==teamLogin["kadi"] and body["sifre"]==teamLogin["sifre"]:
-        message = 'Login Successfully'
+        login = 'Login Successfully'
         print(body)
         
-        return message
+        return login
     else:
         message = 'Access Denied. Please check your login information.'
         return message
@@ -21,53 +21,53 @@ async def root(body: dict = Body(...)):
 @app.post("/telemetryData")
 async def root(body: dict = Body(...)):
     if body:
-        message = 'Received Data'
+        telemetry = f"Received telemetryData :  {responseTelemetryData}"
         print(body)
         
-        return message
+        return telemetry
     else:
         message = 'Missing Data'
         return message
 
-@app.get("/sunucusaati")
+@app.get("/serverTime")
 async def root(body: dict = Body(...)):
     if body:
-        message = 'Received Data'
+        serverTime = 'Received serverTime'
         print(body)
         
-        return message
+        return serverTime
     else:
         message = 'Missing Data'
         return message
     
     
-@app.post("/kilitlenme_bilgisi")
+@app.post("/tracking")
 async def root(body: dict = Body(...)):
     if body:
-        message = 'Received Data'
+        tracking = 'Received tracking Info'
         print(body)
-        return message
+        return tracking
     else:
         message = 'Missing Data'
         return message
     
     
-@app.post("/kamikaze_bilgisi")
+@app.post("/kamikazeInfo")
 async def root(body: dict = Body(...)):
     if body:
-        message = 'Received Data'
+        kamikaze = 'Received kamikazeInfo'
         print(body)
-        return message
+        return kamikaze
     else:
         message = 'Missing Data'
         return message
     
-@app.post("/qr_koordinati")
+@app.post("/qrCoordinate")
 async def root(body: dict = Body(...)):
     if body:
-        message = 'Received Data'
+        qr = 'Received qrCoordinate'
         print(body)
-        return message
+        return qr
     else:
         message = 'Missing Data'
         return message
