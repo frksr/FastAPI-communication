@@ -7,7 +7,7 @@ teamLogin = {
         "sifre" : "takimsifresi"
     }
 
-# GET /api/sunucusaati
+# GET /api/serverTime
 serverTime = {
         "saat": 6,
         "dakika": 9,
@@ -15,7 +15,7 @@ serverTime = {
         "milisaniye": 617
     }
 
-# // POST api/telemetri_gonder
+# // POST api/telemetryData
 telemetryData = {
     "takim_numarasi": 1,
     "IHA_enlem": 43.576546,
@@ -83,7 +83,7 @@ responseTelemetryData = {
         ]
     }
 
-# POST /api/kilitlenme_bilgisi
+# POST /api/tracking
 trackingData = {
     
         "kilitlenmeBaslangicZamani": {
@@ -102,7 +102,7 @@ trackingData = {
     }
 
 
-# POST /api/kamikaze_bilgisi
+# POST /api/kamikazeInfo
 kamikazeData = {
     
         "kamikazeBaslangicZamani": {
@@ -120,7 +120,7 @@ kamikazeData = {
         "qrMetni ": "teknofest2022"
     }
 
-# GET /api/qr_koordinati:
+# GET /api/qrCoordinate:
 qrData = {
     
         "qrEnlem": 41.123456,
