@@ -1,4 +1,4 @@
-from telemetryData import *
+
 
 
 # GET /api/giris
