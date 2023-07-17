@@ -1,6 +1,7 @@
 import datetime
 from fastapi import FastAPI, Body
 
+requestUrl = "https://3ee7-159-146-18-161.ngrok.io"
 
 app = FastAPI()
 
@@ -11,7 +12,7 @@ header = {
         }
 
 
-# instant time info
+# time
 dateHour= datetime.datetime.now().hour
 dateMinute= datetime.datetime.now().minute
 dateSecond= datetime.datetime.now().second

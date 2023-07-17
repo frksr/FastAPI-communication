@@ -1,8 +1,5 @@
-
-
 from telemetryData import *
 from configuration import *
-
 
 
 # incoming team info
@@ -10,23 +7,21 @@ from configuration import *
 async def root(body: dict = Body(...)):
     if body["kadi"]==teamLogin["kadi"] and body["sifre"]==teamLogin["sifre"]:
         login = 'Login Successfully'
-        print(body)
         return login
     else:
         message = 'Access Denied. Please check your login information.'
         return message
 
-
 # incoming server time 
 @app.get("/serverTime")
 async def root(body: dict = Body(...)):
     if body:
-        serverTime = 'Received serverTime'
+        time = dateHour, dateMinute, dateSecond, dateMilisecond
+        serverTime = f'Received serverTime {time}'
         return serverTime
     else:
         message = 'Missing Data'
         return message
-
 
 # incoming telemetry info
 @app.post("/telemetryData")
@@ -34,13 +29,11 @@ async def root(body: dict = Body(...)):
     if body:
         # response 
         telemetry = f"Received telemetryData :  {responseTelemetryData}"
-        print(body)
         return telemetry
     else:
         message = 'Missing Data'
         return message
 
-    
 # incoming tracking info
 @app.post("/tracking")
 async def root(body: dict = Body(...)):
